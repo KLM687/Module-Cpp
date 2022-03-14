@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= megaphone \
+NAME= nokia \
 
-SRCS=  megaphone.cpp \
+SRCS=  main.cpp \
 
 OBJS= $(SRCS:.cpp=.o)
 
