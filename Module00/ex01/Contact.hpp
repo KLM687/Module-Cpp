@@ -10,4 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <iostream>
+# include <cstring>
 
+class Contact
+{
+private:
+	
+public:
+	Contact(void);
+	~Contact(void);
+};
+
+Contact::Contact()
+{
+	std::cout << "constructor contact" << std::endl;
+	return ;
+}
+
+Contact::~Contact()
+{
+	std::cout << "destrutor contact" << std::endl;
+	return ;
+}
+
+
+#endif

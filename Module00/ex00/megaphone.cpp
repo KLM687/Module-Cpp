@@ -18,8 +18,9 @@ using namespace std;
 
 int main (int argc, char **argv)
 {
-	int		x;
-	size_t	y;
+	int				x;
+	size_t			y;
+	std::string 	str;
 
 	x = 1;
 	y = 0;
@@ -29,11 +30,10 @@ int main (int argc, char **argv)
 	{
 		for(x = 1; x < argc; x++)
 		{
-			for (y = 0; y < strlen(argv[x]); y++)
+			str = argv[x];
+			for (y = 0; y < str.size(); y++)
 			{
-				if (isupper(argv[x][y]))
-					std::cout << (char)tolower(argv[x][y]);
-				else if (islower(argv[x][y]))
+				if (islower(argv[x][y]))
 					std::cout << (char)toupper(argv[x][y]);
 				else
 					std::cout << (char)argv[x][y];

@@ -12,17 +12,22 @@
 
 #include <iostream>
 #include <cstring>
+#include "Contact.hpp"
 
 using namespace std;
 
 int main (void)
 {
+	Contact phone;	
 	std::string str;
 
 	while (str.compare("EXIT") != 0)
 	{
 		std::getline (std::cin, str);
-		if 
+		//if(str.compare("ADD"))
+
+		//if(str.compare("SEARCH"))
+		
 	}
 	return (0);
 }
