@@ -14,8 +14,6 @@
 #include <cctype>
 #include <cstring>
 
-using namespace std;
-
 int main (int argc, char **argv)
 {
 	int				x;
@@ -40,6 +38,6 @@ int main (int argc, char **argv)
 			}
 		}
 	}
-	std::cout << endl;
+	std::cout << std::endl;
 	return (0);
 }

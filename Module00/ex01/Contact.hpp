@@ -27,13 +27,13 @@ public:
 Contact::Contact()
 {
 	std::cout << "constructor contact" << std::endl;
-	return ;
+	return;
 }
 
 Contact::~Contact()
 {
 	std::cout << "destrutor contact" << std::endl;
-	return ;
+	return;
 }
 
 
