@@ -20,7 +20,7 @@ CC= c++
 
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 
-.c.o:
+.cpp.o:
 	$(CC) $(CFLAGS) $< -o $(<:.cpp=.o)
 
 $(NAME): $(OBJS)
