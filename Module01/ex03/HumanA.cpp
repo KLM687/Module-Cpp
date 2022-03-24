@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/24 15:44:52 by flee              #+#    #+#             */
+/*   Updated: 2022/03/24 15:44:54 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "HumanA.hpp"
 
-int main (void)
+void	HumanA::attack(void)
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
+	std::cout<< this->_name << " attaks with his " << this->_weapon->getType() << std::endl;
+}
 
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
+HumanA::HumanA(std::string name, Weapon &weapon)
+{
+	this->_name = name;
+	this->_weapon = &weapon;
+}
 
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
+HumanA::~HumanA(void)
+{
 }

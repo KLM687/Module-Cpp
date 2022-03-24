@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/22 14:03:59 by flee              #+#    #+#             */
+/*   Updated: 2022/03/22 14:04:00 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "Weapon.hpp"
 
-int main (void)
+const std::string	&Weapon::getType()
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
+	return (this->_type);
+}
 
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
+void	Weapon::setType(std::string type)
+{
+	this->_type = type;
+}
 
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
+Weapon::Weapon(std::string type)
+{
+	this->_type = type;
+}
+
+Weapon::~Weapon(void)
+{
 }

@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME= fightClub 
+NAME= replace
 
-SRCS=  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS=  main.cpp
 
 OBJS= $(SRCS:.cpp=.o)
 

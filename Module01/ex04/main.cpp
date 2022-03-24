@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/24 15:49:55 by flee              #+#    #+#             */
+/*   Updated: 2022/03/24 15:49:56 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fstream>
 #include <iostream>
 #include <cstring>
 
-int main (void)
+int main (int argc, char **argv)
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
-
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
-
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
+	if (argc != 4)
+	{
+		std::cout << "./replace FILE \"string1\" \"string2\"" << std::endl;
+		return (1);
+	}
+	return (0);
 }

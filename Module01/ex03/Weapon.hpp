@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/22 13:32:15 by flee              #+#    #+#             */
+/*   Updated: 2022/03/22 13:32:19 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main (void)
+# include <string>
+# include <iostream>
+
+class Weapon
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
+	private:
+		std::string _type;
+	public:
+		const std::string	&getType();
+		void				setType(std::string type);
+		Weapon(std::string type);
+		~Weapon(void);
+};
 
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
-
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
-}
+#endif

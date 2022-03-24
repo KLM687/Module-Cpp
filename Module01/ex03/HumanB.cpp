@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/24 15:45:13 by flee              #+#    #+#             */
+/*   Updated: 2022/03/24 15:45:19 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "HumanB.hpp"
 
-int main (void)
+void	HumanB::setWeapon(Weapon &weapon)
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
+	this->_weapon = &weapon;
+}
+void	HumanB::attack(void)
+{
+	std::cout<< this->_name << " attaks with his " << this->_weapon->getType() << std::endl;
+}
 
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
+HumanB::HumanB(std::string name)
+{
+	this->_name = name;
+}
 
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
+HumanB::~HumanB(void)
+{
 }

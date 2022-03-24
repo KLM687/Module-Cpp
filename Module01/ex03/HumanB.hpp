@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 13:07:08 by flee              #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:23 by flee             ###   ########.fr       */
+/*   Created: 2022/03/24 15:45:27 by flee              #+#    #+#             */
+/*   Updated: 2022/03/24 15:45:28 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int main (void)
+#include "Weapon.hpp"
+
+class HumanB
 {
-	std::string     brain = "THIS IS BRAIN";
-	std::string*	brainPTR = &brain;
-	std::string&	brainREF = brain;
+private:
+	Weapon		*_weapon;
+	std::string	_name;
+public:
+	void	setWeapon(Weapon &weapon);
+	void	attack(void);
+	HumanB(std::string name);
+	~HumanB(void);
+};
 
-	std::cout << &brain << " | " << brainPTR << " | " << &brainREF << std::endl;
-
-	std::cout << brain << "  | " << *brainPTR << "  | " << brainREF << std::endl;
-}
+#endif
