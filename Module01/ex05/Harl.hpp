@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 15:49:55 by flee              #+#    #+#             */
-/*   Updated: 2022/03/24 15:49:56 by flee             ###   ########.fr       */
+/*   Created: 2022/03/25 12:51:34 by flee              #+#    #+#             */
+/*   Updated: 2022/03/25 12:51:35 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
-#include <iostream>
-#include <cstring>
-#include <istream>
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <iostream>
+# include <cstring>
 
-int main (int argc, char **argv)
+class Harl
 {
-	std::string line;
-	
-	if (argc != 2)
-	{
-		std::cout << "./replace FILE \"string1\" \"string2\"" << std::endl;
-		return (1);
-	}
-	std::fstream file1;
-	file1.open(argv[1], std::fstream::in);
-	while (std::getline(file1, line))
-	{
-		std::cout << line << std::endl;
-	}
-	file1.close();
-	return (0);
-}
+private:
+	void _debug(void);
+	void _info(void);
+	void _warning(void);
+	void _error(void);
+	typedef void (Harl::*ptrTab)(void);
+	ptrTab array[4];
+public:
+	void complain(std::string level);
+	void call(void (Harl::*fct)());
+	Harl(void);
+	~Harl(void);
+};
+
+#endif
