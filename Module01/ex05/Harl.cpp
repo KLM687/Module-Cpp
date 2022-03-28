@@ -34,14 +34,13 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string level)
 {
-	if (level.compare("DEBUG") == 0)
-		(*this.*array[0])();
-	if (level.compare("INFO") == 0)
-		(*this.*array[1])();
-	if (level.compare("WARNING") == 0)
-		(*this.*array[2])();
-	if (level.compare("ERROR") == 0)
-		(*this.*array[3])();
+	std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 4 ; i++)
+	{
+		if (level == tab[i])
+			(*this.*array[i])();
+	}
 }
 
 Harl::Harl(void)

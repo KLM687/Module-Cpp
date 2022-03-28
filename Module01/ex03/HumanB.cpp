@@ -18,7 +18,10 @@ void	HumanB::setWeapon(Weapon &weapon)
 }
 void	HumanB::attack(void)
 {
-	std::cout<< this->_name << " attaks with his " << this->_weapon->getType() << std::endl;
+	if (!this->_weapon)
+		std::cout<< this->_name << " attaks with his bare hand " << std::endl;
+	else
+		std::cout<< this->_name << " attaks with his " << this->_weapon->getType() << std::endl;
 }
 
 HumanB::HumanB(std::string name)
