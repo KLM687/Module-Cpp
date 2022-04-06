@@ -35,8 +35,8 @@ public:
 
 
 	Fixed & operator=(Fixed const & rhs);
+	bool & 	operator<(Fixed const & r);
 };
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & rhs);
-
 #endif
