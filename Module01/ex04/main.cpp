@@ -23,7 +23,6 @@ int main (int argc, char **argv)
 	std::size_t	found;
 	int 		len;
 
-	len = strlen(argv[2]);
 	found = 0;
 
 	if (argc != 4)
@@ -32,15 +31,15 @@ int main (int argc, char **argv)
 		return (1);
 	}
 
-	std::fstream file1;
-	file1.open(argv[1], std::fstream::in);
+	std::ifstream file1;
+	file1.open(argv[1], std::ifstream::in);
 	if (!file1.is_open())
 	{
 		std::cout << "error opening file !" << std::endl;
 		return (1);
 	}
 
-	if (file1.fail() || file1.eof() || file1.bad())
+	if (file1.fail() || file1.bad())
 	{
  	 	std::cout << " eof()=" << file1.eof();
 		std::cout << " fail()=" << file1.fail();
@@ -48,18 +47,23 @@ int main (int argc, char **argv)
 		return (1);
 	}
 
+	len = strlen(argv[2]);
+
 	while (getline(file1, line))
 	{
 		found = 0;
 		if (!(argv[2][0] == '\0' &&  argv[3][0] == '\0'))
 		{
-			found = line.find(argv[2], found);
-			while (found < line.size())
+			if (strlen(argv[2]))
 			{
-				line.erase(found, len);
-				line.insert(found , argv[3]);
-				found += strlen(argv[3]);
 				found = line.find(argv[2], found);
+				while (found < line.size())
+				{
+					line.erase(found, len);
+					line.insert(found , argv[3]);
+					found += strlen(argv[3]);
+					found = line.find(argv[2], found);
+				}
 			}
 		}	
 		if (line.empty())
