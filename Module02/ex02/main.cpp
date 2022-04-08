@@ -24,5 +24,28 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << "----mytest----" << std::endl;
+	const Fixed r(10);
+	const Fixed l(2);
+	std::cout << "r = " << r.toFloat() << " l = " << l.toFloat() << std::endl;
+	std::cout << "r+l = " << r+l << std::endl;
+	std::cout << "r-l = " << r-l << std::endl;
+	std::cout << "r/l = " << r/l << std::endl;
+	std::cout << "r*l = " << r*l << std::endl;
+	if (r < l)
+		std::cout << "r < l" << std::endl;
+	if (r <= l)
+		std::cout << "r <= l" << std::endl;
+	if (r > l)
+		std::cout << "r < l" << std::endl;
+	if (r >= l)
+		std::cout << "r <= l" << std::endl;
+	if (r == l)
+		std::cout << "r == l" << std::endl;
+	if (r != l)
+		std::cout << "r != l" << std::endl;
+	std::cout << "min is " << Fixed::min( r, l ) << std::endl;
+	std::cout << "max is " << Fixed::max( r, l ) << std::endl;
 	return 0;
 }
