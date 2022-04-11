@@ -33,17 +33,16 @@ int main (int argc, char **argv)
 
 	std::ifstream file1;
 	file1.open(argv[1], std::ifstream::in);
-	if (!file1.is_open())
+	
+	if (file1.fail() || file1.bad())
 	{
-		std::cout << "error opening file !" << std::endl;
+		std::cout << "error file !" << std::endl;
 		return (1);
 	}
 
-	if (file1.fail() || file1.bad())
+	if (!file1.is_open())
 	{
- 	 	std::cout << " eof()=" << file1.eof();
-		std::cout << " fail()=" << file1.fail();
- 	 	std::cout << " bad()=" << file1.bad();
+		std::cout << "error opening file !" << std::endl;
 		return (1);
 	}
 
