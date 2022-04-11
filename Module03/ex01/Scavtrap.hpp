@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Claptrap.hpp                                       :+:      :+:    :+:   */
+/*   Scavtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 09:54:06 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 09:54:07 by flee             ###   ########.fr       */
+/*   Created: 2022/04/11 12:12:26 by flee              #+#    #+#             */
+/*   Updated: 2022/04/11 12:12:30 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
-#include <iostream>
-#include <cstring>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "Claptrap.hpp"
 
-class Claptrap
+class Scavtrap : public Claptrap
 {
 private:
-	std::string _name;
-	int 		_hit_pt;
-	int			_energy_pt;
-	int			_atck_dmg;
+	bool		_guard;
 public:
-
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-	Claptrap & operator=(Claptrap const & rhs);
-
-	Claptrap(std::string name);
-	Claptrap(Claptrap const & src);
-	~Claptrap(void);
+		void guardGate(void);
+		void attack(const std::string& target);
+		Scavtrap(void);
+		Scavtrap(std::string name);
+		~Scavtrap(void);
 };
 
 #endif

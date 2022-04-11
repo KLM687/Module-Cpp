@@ -17,7 +17,7 @@
 
 class Claptrap
 {
-private:
+protected:
 	std::string _name;
 	int 		_hit_pt;
 	int			_energy_pt;
@@ -29,7 +29,7 @@ public:
 	void beRepaired(unsigned int amount);
 
 	Claptrap & operator=(Claptrap const & rhs);
-
+	Claptrap(void);
 	Claptrap(std::string name);
 	Claptrap(Claptrap const & src);
 	~Claptrap(void);

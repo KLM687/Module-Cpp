@@ -61,9 +61,15 @@ Claptrap &	Claptrap::operator=(Claptrap const & rhs)
 	return *this;
 }
 
+Claptrap::Claptrap(void)
+{
+	this->_name = "claptrap";
+	std::cout << "Claptrap Constructor is here" << std::endl;
+}
+
 Claptrap::Claptrap(std::string name) : _name(name), _hit_pt(10), _energy_pt(10), _atck_dmg(0)
 {
-	std::cout << "Constructor is here" << std::endl;
+	std::cout << "Claptrap Constructor is here" << std::endl;
 }
 
 Claptrap::Claptrap(Claptrap const & src)
@@ -74,5 +80,5 @@ Claptrap::Claptrap(Claptrap const & src)
 
 Claptrap::~Claptrap()
 {
-	std::cout << "Destructor is here" << std::endl;
+	std::cout << "Claptrap Destructor is here" << std::endl;
 }
