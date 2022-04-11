@@ -11,18 +11,19 @@
 /* ************************************************************************** */
 
 #include "Claptrap.hpp"
-#include "Scavtrap.hpp"
+#include "Fragtrap.hpp"
 
 int main (void)
 {
-	Scavtrap scavtrap("Scavtrap");
+	Fragtrap fragtrap("Fragtrap");
 
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.beRepaired(100);
-	scavtrap.guardGate();
-	scavtrap.takeDamage(1000);
-	scavtrap.attack("Brick");
+	fragtrap.highFivesGuys();
+	fragtrap.attack("Brick");
+	fragtrap.attack("Brick");
+	fragtrap.attack("Brick");
+	fragtrap.attack("Brick");
+	fragtrap.beRepaired(100);
+	fragtrap.takeDamage(1000);
+	fragtrap.highFivesGuys();
+	fragtrap.attack("Brick");
 }

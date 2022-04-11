@@ -20,7 +20,7 @@ void Scavtrap::attack(const std::string& target)
 		std::cout << "Scavtrap " << this->_name << " is tired and can't perform an attack" << std::endl;
 	else
 	{
-		std::cout << "Scavtrap " << this->_name  << " attack " << target << " causing " << this->_atck_dmg << " points of poison damage!" << std::endl;
+		std::cout << "Scavtrap " << this->_name  << " attack " << target << " causing " << this->_atck_dmg << " points of damage!" << std::endl;
 		this->_energy_pt -= 1;
 	}
 }

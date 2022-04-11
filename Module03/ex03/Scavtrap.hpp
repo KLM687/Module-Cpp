@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Scavtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 09:54:34 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 09:54:37 by flee             ###   ########.fr       */
+/*   Created: 2022/04/11 12:12:26 by flee              #+#    #+#             */
+/*   Updated: 2022/04/11 12:12:30 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
-#include "Scavtrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "Claptrap.hpp"
 
-int main (void)
+class Scavtrap : virtual public Claptrap
 {
-	Scavtrap scavtrap("Scavtrap");
+private:
+	bool		_guard;
+public:
+		void guardGate(void);
+		void attack(const std::string& target);
+		Scavtrap(void);
+		Scavtrap(std::string name);
+		~Scavtrap(void);
+};
 
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.beRepaired(100);
-	scavtrap.guardGate();
-	scavtrap.takeDamage(1000);
-	scavtrap.attack("Brick");
-}
+#endif

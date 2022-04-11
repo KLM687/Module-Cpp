@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 09:54:34 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 09:54:37 by flee             ###   ########.fr       */
+/*   Created: 2022/04/11 16:42:31 by flee              #+#    #+#             */
+/*   Updated: 2022/04/11 16:42:32 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
-#include "Scavtrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "Claptrap.hpp"
 
-int main (void)
+class Fragtrap : virtual public Claptrap
 {
-	Scavtrap scavtrap("Scavtrap");
+public:
+	void highFivesGuys(void);
+	Fragtrap(void);
+	Fragtrap(std::string name);
+	~Fragtrap(void);
+};
 
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.beRepaired(100);
-	scavtrap.guardGate();
-	scavtrap.takeDamage(1000);
-	scavtrap.attack("Brick");
-}
+#endif

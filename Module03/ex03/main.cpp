@@ -10,19 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
-#include "Scavtrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main (void)
 {
-	Scavtrap scavtrap("Scavtrap");
-
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.beRepaired(100);
-	scavtrap.guardGate();
-	scavtrap.takeDamage(1000);
-	scavtrap.attack("Brick");
+	DiamondTrap diamondTrap("Diamondtrap");
+	diamondTrap.attack("Brick");
 }
