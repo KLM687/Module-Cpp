@@ -21,9 +21,13 @@ private:
 public:
 		void guardGate(void);
 		void attack(const std::string& target);
+		void status(void);
 		Scavtrap(void);
 		Scavtrap(std::string name);
 		~Scavtrap(void);
+
+		Scavtrap(Scavtrap const & src);
+		Scavtrap & operator=(Scavtrap const & rhs);
 };
 
 #endif

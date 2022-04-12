@@ -17,12 +17,11 @@ int main (void)
 {
 	Scavtrap scavtrap("Scavtrap");
 
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
-	scavtrap.attack("Brick");
 	scavtrap.beRepaired(100);
-	scavtrap.guardGate();
-	scavtrap.takeDamage(1000);
+	//scavtrap.takeDamage(1000);
 	scavtrap.attack("Brick");
+	scavtrap.guardGate();
+	scavtrap.attack("Brick");
+	scavtrap.status();
+
 }

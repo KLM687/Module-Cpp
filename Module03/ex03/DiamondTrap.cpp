@@ -12,10 +12,11 @@
 
 #include "DiamondTrap.hpp"
 
-/*void	DiamondTrap::attack(std::string const & target)
+void DiamondTrap::whoAmI(void)
 {
-	Scavtrap::attack(target);
-}*/
+	std::cout << "_name : " << this->_name << std::endl; 
+	std::cout << "Im " << Claptrap::_name << " great Child" << std::endl;
+}
 
 DiamondTrap::DiamondTrap(void)
 {
@@ -29,8 +30,10 @@ DiamondTrap::DiamondTrap(void)
 	std::cout << "atck : " << this->_atck_dmg << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : _name(name)
+DiamondTrap::DiamondTrap(std::string name) : Fragtrap(name + "_clap_name") , _name(name)
 {
+	std::cout << "DiamondTrap Constructor is here" << std::endl;
+	Claptrap::_name = name + "_clap_name";
 	this->_name += "_clap_name";
 	this->_hit_pt = Fragtrap::_hit_pt;
 	this->_energy_pt = Scavtrap::_energy_pt;

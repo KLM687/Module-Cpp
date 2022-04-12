@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 16:42:31 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 16:42:32 by flee             ###   ########.fr       */
+/*   Created: 2022/04/12 15:12:33 by flee              #+#    #+#             */
+/*   Updated: 2022/04/12 15:12:36 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "Claptrap.hpp"
 
-class Fragtrap : public Claptrap
-{
-public:
-	void highFivesGuys(void);
-	void status(void);
-	Fragtrap(void);
-	Fragtrap(std::string name);
-	~Fragtrap(void);
-
-	Fragtrap(Fragtrap const & src);
-	Fragtrap & operator=(Fragtrap const & rhs);
-};
-
-#endif

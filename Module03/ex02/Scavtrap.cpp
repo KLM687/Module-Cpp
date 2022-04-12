@@ -31,6 +31,14 @@ void Scavtrap::guardGate(void)
 	std::cout << "GuardKeeper mode on" << std::endl;
 }
 
+void Scavtrap::status(void)
+{
+	std::cout << this->_name << std::endl;
+	std::cout << this->_hit_pt << std::endl;
+	std::cout << this->_energy_pt << std::endl;
+	std::cout << this->_atck_dmg << std::endl;
+}
+
 Scavtrap::Scavtrap(void)
 {
 	this->_name = "default";
@@ -52,4 +60,22 @@ Scavtrap::Scavtrap(std::string name) : _guard(false)
 Scavtrap::~Scavtrap(void)
 {
 	std::cout << "Scavtrap Destructor is here" << std::endl;
+}
+
+Scavtrap &	Scavtrap::operator=(Scavtrap const & rhs)
+{
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_energy_pt = rhs._energy_pt;
+		this->_hit_pt = rhs._hit_pt;
+		this->_atck_dmg = rhs._atck_dmg;
+	}
+	return *this;
+}
+
+Scavtrap::Scavtrap(Scavtrap const & src)
+{
+	*this = src;
+	return ;
 }

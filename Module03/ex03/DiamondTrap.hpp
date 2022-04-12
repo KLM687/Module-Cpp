@@ -15,13 +15,12 @@
 # include "Fragtrap.hpp"
 # include "Scavtrap.hpp"
 
-class DiamondTrap : public Fragtrap , public Scavtrap
+class DiamondTrap : public Scavtrap, public Fragtrap
 {
 private:
 	std::string _name;
 public:
-
-	//void attack(std::string const & target);
+	void whoAmI(void);
 	DiamondTrap(void);
 	DiamondTrap(std::string name);
 	~DiamondTrap(void);

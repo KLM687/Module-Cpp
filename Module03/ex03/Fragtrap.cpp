@@ -19,7 +19,7 @@ void Fragtrap::highFivesGuys(void)
 
 Fragtrap::Fragtrap(void)
 {
-	this->_name = "default";
+	this->_name = "Default";
 	this->_hit_pt = 100;
 	this->_energy_pt = 100;
 	this->_atck_dmg = 30;
@@ -28,7 +28,7 @@ Fragtrap::Fragtrap(void)
 
 Fragtrap::Fragtrap(std::string name)
 {
-	this->_name = name;
+	this->_name = name ;
 	this->_hit_pt = 100;
 	this->_energy_pt = 100;
 	this->_atck_dmg = 30;

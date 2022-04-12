@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 16:42:31 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 16:42:32 by flee             ###   ########.fr       */
+/*   Created: 2022/04/12 15:02:35 by flee              #+#    #+#             */
+/*   Updated: 2022/04/12 15:02:37 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "Claptrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <iostream>
+# include <cstring>
 
-class Fragtrap : public Claptrap
+class Animal
 {
+protected:
+	std::string _type;	
 public:
-	void highFivesGuys(void);
-	void status(void);
-	Fragtrap(void);
-	Fragtrap(std::string name);
-	~Fragtrap(void);
 
-	Fragtrap(Fragtrap const & src);
-	Fragtrap & operator=(Fragtrap const & rhs);
+	void getType(void);
+
+	Animal(void);
+	Animal(std::string type);
+	Animal(Animal const & src);
+	~Animal(void);
+
+	Animal &	Animal::operator=(Animal const & rhs)
 };
 
 #endif

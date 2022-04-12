@@ -1,30 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 16:42:31 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 16:42:32 by flee             ###   ########.fr       */
+/*   Created: 2022/04/12 15:02:46 by flee              #+#    #+#             */
+/*   Updated: 2022/04/12 15:02:47 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "Claptrap.hpp"
+#include "Animal.hpp"
 
-class Fragtrap : public Claptrap
+void	Animal::getType(void)
 {
-public:
-	void highFivesGuys(void);
-	void status(void);
-	Fragtrap(void);
-	Fragtrap(std::string name);
-	~Fragtrap(void);
+	return (this->_type);
+}
 
-	Fragtrap(Fragtrap const & src);
-	Fragtrap & operator=(Fragtrap const & rhs);
-};
+Animal::Animal(void)
+{
+	this->_type = "Default";
+}
 
-#endif
+Animal::Animal(std::string type) : _type(type)
+{
+}
+
+Animal::Animal(Animal const & src)
+{
+	*this = src;
+	return;
+}
+
+Animal::~Animal(void)
+{
+}
+
+Animal &	Animal::operator=(Animal const & rhs)
+{
+	if (this != &rhs)
+	{
+		this->_type = rhs.getType();
+	}
+	return *this;
+}

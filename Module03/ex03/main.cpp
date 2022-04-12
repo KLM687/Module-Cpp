@@ -16,4 +16,5 @@ int main (void)
 {
 	DiamondTrap diamondTrap("Diamondtrap");
 	diamondTrap.attack("Brick");
+	diamondTrap.whoAmI();
 }

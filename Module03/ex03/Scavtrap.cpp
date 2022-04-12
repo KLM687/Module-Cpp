@@ -40,7 +40,7 @@ Scavtrap::Scavtrap(void)
 	std::cout << "Scavtrap Default Constructor is here" << std::endl;
 }
 
-Scavtrap::Scavtrap(std::string name) : _guard(false)
+Scavtrap::Scavtrap(std::string name) : Claptrap("ClapTrap"), _guard(false) 
 {
 	this->_name = name;
 	this->_hit_pt = 100;

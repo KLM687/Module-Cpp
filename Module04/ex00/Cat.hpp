@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/11 16:42:31 by flee              #+#    #+#             */
-/*   Updated: 2022/04/11 16:42:32 by flee             ###   ########.fr       */
+/*   Created: 2022/04/12 15:12:14 by flee              #+#    #+#             */
+/*   Updated: 2022/04/12 15:12:16 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include "Claptrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+# include "Animal.hpp"
 
-class Fragtrap : public Claptrap
+class Cat : public Animal
 {
 public:
-	void highFivesGuys(void);
-	void status(void);
-	Fragtrap(void);
-	Fragtrap(std::string name);
-	~Fragtrap(void);
-
-	Fragtrap(Fragtrap const & src);
-	Fragtrap & operator=(Fragtrap const & rhs);
+	Cat(void);
+	Cat(std::string type);
+	Cat(Animal const & src);
+	~Cat(void);
 };
 
-#endif
+Cat::Cat(void)
+{
+}
+
+Cat::~Cat()
+{
+}

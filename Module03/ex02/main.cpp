@@ -26,4 +26,5 @@ int main (void)
 	fragtrap.takeDamage(1000);
 	fragtrap.highFivesGuys();
 	fragtrap.attack("Brick");
+	fragtrap.status();
 }
