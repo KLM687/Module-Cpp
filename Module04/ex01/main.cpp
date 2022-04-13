@@ -13,8 +13,7 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main() 
 {
@@ -29,12 +28,5 @@ meta->makeSound();
 delete meta;
 delete i;
 delete j;
-const WrongAnimal* meta1 = new WrongAnimal();
-const WrongAnimal* i1 = new WrongCat();
-std::cout << i1->getType() << " " << std::endl;
-meta1->makeSound();
-i1->makeSound();
-delete meta1;
-delete i1;
 return 0; 
 }

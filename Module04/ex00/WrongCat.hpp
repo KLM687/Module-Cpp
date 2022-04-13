@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
-	void makeSound(void) const;
+	WrongCat(void);
+	WrongCat(std::string type);
+	WrongCat(WrongCat const & src);
+	~WrongCat(void);
 
-	Cat(void);
-	Cat(std::string type);
-	Cat(Cat const & src);
-	virtual ~Cat(void);
-
-	Cat & operator=(Cat const & rhs);
+	WrongCat & operator=(WrongCat const & rhs);
 };
 
 #endif
