@@ -22,7 +22,8 @@ Brain::Brain(void)
 
 Brain::Brain(Brain const & src)
 {
-	this->ideas = src.ideas;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = src.ideas[i] + "copy";
 	std::cout << "Brain Copy Construtor Called" << std::endl;
 }
 
@@ -38,6 +39,17 @@ Brain & Brain::operator=(Brain const & rhs)
 	for (int i = 0; i < 100; i++)
 		this->ideas[i] = rhs.ideas[i];
 	return (*this);
+}
+
+void	Brain::setIdeas(std::string name)
+{
+	for(int i = 0 ; i < 100 ; i++)
+		this->ideas[i] = name;
+}
+
+std::string Brain::showIdea(void)
+{
+	return (this->ideas[0]);
 }
 
 std::string *Brain::getIdeas()

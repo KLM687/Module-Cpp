@@ -36,9 +36,8 @@ Dog::Dog(Dog const & src) : Animal()
 
 Dog & Dog::operator=(Dog const & rhs)
 {
-	std::cout << "HERE" << std::endl;
-	this->_type = rhs._type;
-
+	this->_type = rhs.getType();
+	this->_brain->setIdeas(rhs._brain->showIdea());
 	return (*this);
 }
 
@@ -50,6 +49,16 @@ Brain *Dog::getBrain(void) const
 void Dog::makeSound(void) const
 {
 	std::cout << "Wooooooooff" << std::endl;
+}
+
+void Dog::showIdeas(void) const
+{
+	std::cout << this->_brain->showIdea() << std::endl;
+}
+	
+void Dog::SetIdeas(std::string name)
+{
+	this->_brain->setIdeas(name);
 }
 
 Dog::~Dog(void)

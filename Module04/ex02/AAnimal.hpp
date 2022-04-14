@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,7 +22,7 @@ protected:
 	std::string _type;	
 public:
 
-	virtual std::string getType(void) const = 0;
+	virtual std::string getType(void) const;
 	virtual void makeSound(void) const = 0;
 	AAnimal(void);
 	AAnimal(std::string type);

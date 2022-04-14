@@ -21,6 +21,8 @@ private:
 	Brain *_brain;
 public:
 	void makeSound(void) const;
+	void showIdeas(void) const;
+	void SetIdeas(std::string name);
 	Cat(void);
 	Cat(std::string type);
 	Cat(Cat const & src);

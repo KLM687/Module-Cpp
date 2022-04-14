@@ -22,6 +22,8 @@ private:
 public:
 	void makeSound(void) const;
 	Brain *getBrain(void) const;
+	void showIdeas(void) const;
+	void SetIdeas(std::string name);
 
 	Dog(void);
 	Dog(std::string type);

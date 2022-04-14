@@ -35,9 +35,17 @@ int main(void)
 		delete tab[i];
 	std::cout << ">>---------------Deep Copy Proof--------------<<" << std::endl;
 	Dog dog;
-	std::cout << dog.getBrain() << std::endl;
+	std::cout << "Ptr to dog brain -> " << dog.getBrain() << std::endl;
+	std::cout << "dog ideas = ";
+	dog.showIdeas();
+	dog.SetIdeas("New EUREKA");
+	std::cout << "dog new ideas = ";
+	dog.showIdeas();
 	Dog dog1;
-	std::cout << dog1.getBrain() << std::endl;
+	std::cout << "dog1 ideas = ";
+	dog1.showIdeas();
 	dog1 = dog;
-	std::cout << dog1.getBrain() << std::endl;
+	std::cout << "dog1 copy ideas = ";
+	dog1.showIdeas();
+	std::cout << "Ptr to dog1 brain -> " << dog1.getBrain() << std::endl;
 }

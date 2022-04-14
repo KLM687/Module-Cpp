@@ -17,21 +17,14 @@
 
 int main(void) 
 {
-/*const AAnimal* meta = new AAnimal(); 
-const AAnimal* j = new Dog();
-const AAnimal* i = new Cat();*/
 
-const Dog *meta = new Dog();
-const Dog *j = new Dog();
-const Cat *i = new Dog();
+//AAnimal ani;
+Dog dog;
+Cat cat;
 
-std::cout << j->getType() << " " << std::endl; 
-std::cout << i->getType() << " " << std::endl; 
-i->makeSound(); //will output the cat sound! 
-j->makeSound();
-meta->makeSound();
-delete meta;
-delete i;
-delete j;
+std::cout << dog.getType() << " " << std::endl; 
+std::cout << cat.getType() << " " << std::endl; 
+dog.makeSound(); 
+cat.makeSound();
 return 0; 	
 }

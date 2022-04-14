@@ -26,12 +26,24 @@ Cat::Cat(std::string name)
 	std::cout << "Cat Construteur Called" << std::endl;
 }
 
-Cat::Cat(Cat const & src) : Animal()
+Cat::Cat(Cat const & src) : AAnimal()
 {
 	this->_type = src.getType();
-	this->_brain = new Brain();
+	this->_brain = src._brain;
 	std::cout << "Cat copy Constructor Called" << std::endl;
 }
+
+
+void Cat::showIdeas(void) const
+{
+	std::cout << this->_brain->showIdea() << std::endl;
+}
+	
+void Cat::SetIdeas(std::string name)
+{
+	this->_brain->setIdeas(name);
+}
+
 
 Cat & Cat::operator=(Cat const & rhs)
 {

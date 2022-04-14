@@ -20,6 +20,8 @@ private:
 	std::string	*ideas;
 public:
 	std::string *getIdeas(void);
+	std::string  showIdea(void);
+	void		 setIdeas(std::string name);
 	std::string  getBrain(void);
 
 	Brain(void);
