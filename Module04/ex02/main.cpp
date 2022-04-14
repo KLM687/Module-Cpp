@@ -10,34 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
 
 int main(void) 
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-	std::cout << ">>----------------TAB BRAIN-------------------<<" << std::endl;
-	Animal *tab[10];
-	for (int i = 0 ; i < 10 ; i++)
-	{
-		if (i < 5)
-			tab[i] = new Dog();
-		else
-			tab[i] = new Cat();
-	}
-	std::cout << ">>---------------TAB BRAIN DELETE-------------<<" << std::endl;
-	for (int i = 0 ; i < 10 ; i++)
-		delete tab[i];
-	std::cout << ">>---------------Deep Copy Proof--------------<<" << std::endl;
-	Dog dog;
-	std::cout << dog.getBrain() << std::endl;
-	Dog dog1;
-	std::cout << dog1.getBrain() << std::endl;
-	dog1 = dog;
-	std::cout << dog1.getBrain() << std::endl;
+/*const AAnimal* meta = new AAnimal(); 
+const AAnimal* j = new Dog();
+const AAnimal* i = new Cat();*/
+
+const Dog *meta = new Dog();
+const Dog *j = new Dog();
+const Cat *i = new Dog();
+
+std::cout << j->getType() << " " << std::endl; 
+std::cout << i->getType() << " " << std::endl; 
+i->makeSound(); //will output the cat sound! 
+j->makeSound();
+meta->makeSound();
+delete meta;
+delete i;
+delete j;
+return 0; 	
 }

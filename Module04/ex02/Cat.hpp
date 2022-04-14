@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 15:11:51 by flee              #+#    #+#             */
-/*   Updated: 2022/04/12 15:11:52 by flee             ###   ########.fr       */
+/*   Created: 2022/04/12 15:12:14 by flee              #+#    #+#             */
+/*   Updated: 2022/04/12 15:12:16 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public AAnimal
 {
 private:
 	Brain *_brain;
 public:
 	void makeSound(void) const;
-	Brain *getBrain(void) const;
+	Cat(void);
+	Cat(std::string type);
+	Cat(Cat const & src);
+	virtual ~Cat(void);
 
-	Dog(void);
-	Dog(std::string type);
-	Dog(Dog const & src);
-	virtual ~Dog(void);
-
-	Dog & operator=(Dog const & rhs);
+	Cat & operator=(Cat const & rhs);
 };
 
 #endif
