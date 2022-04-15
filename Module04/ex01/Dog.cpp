@@ -30,7 +30,8 @@ Dog::Dog(std::string name)
 Dog::Dog(Dog const & src) : Animal()
 {
 	this->_type = src.getType();
-	this->_brain = src.getBrain();
+	this->_brain = new Brain();
+	this->_brain->setIdeas(src._brain->showIdea());
 	std::cout << "Dog copy Constructor Called" << std::endl;
 }
 

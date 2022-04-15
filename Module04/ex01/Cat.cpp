@@ -29,7 +29,8 @@ Cat::Cat(std::string name)
 Cat::Cat(Cat const & src) : Animal()
 {
 	this->_type = src.getType();
-	this->_brain = src._brain;
+	this->_brain = new Brain();
+	this->_brain->setIdeas(src._brain->showIdea());
 	std::cout << "Cat copy Constructor Called" << std::endl;
 }
 
@@ -47,8 +48,8 @@ void Cat::SetIdeas(std::string name)
 
 Cat & Cat::operator=(Cat const & rhs)
 {
-	this->_type = rhs._type;
-	this->_brain = rhs._brain;
+	this->_type = rhs.getType();
+	this->_brain->setIdeas(rhs._brain->showIdea());
 	return (*this);
 }
 
