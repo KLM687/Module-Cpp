@@ -71,15 +71,17 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			throw  GradeTooLowException;
 		else
 		{
-
 			std::cout << executor.getName() << " execute ShrubberyForm" << std::endl;
-			std::ofstream	ofs("test");
-			if (!ofs.is_open())
+			std::string tmp = this->_target + "_Shrubbery";
+			char const* ca = tmp.c_str();	
+			std::ofstream file;
+			file.open(ca, std::ofstream::out | std::ofstream::trunc);	
+			if (!file.is_open())
 			{
 				std::cout << "Opening file failed !" << std::endl;
 				return ;
 			}
-			ofs << tree;
+			file << tree;
 		}
 	}
 	catch(const std::exception& e)

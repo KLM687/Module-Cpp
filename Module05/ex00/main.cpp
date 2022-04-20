@@ -14,7 +14,6 @@
 
 int main(void) 
 {
-	std::cout << "----- Exception High : grade > 140 ---- Exception Low : grade < 145 -----" << std::endl;
 
 	Bureaucrat a("A", 1);
 	Bureaucrat b("B", 150);

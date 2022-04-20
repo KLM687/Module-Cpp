@@ -19,10 +19,13 @@
 
 class Intern
 {
+private:
+	AForm *robotomy(std::string target);
+	AForm *Presidential(std::string target);
+	AForm *Shrubbery(std::string target);
+	typedef AForm *(Intern::*ptrTab)(std::string name);
+	ptrTab array[3];
 public:
-	static AForm *robotomy(std::string target);
-	static AForm *Pressidential(std::string target);
-	static AForm *Shrubbery(std::string target);
 	Intern(void);
 	Intern(Intern const & src);
 	~Intern(void);

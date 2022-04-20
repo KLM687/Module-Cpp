@@ -72,8 +72,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		else
 		{
 			std::cout << executor.getName() << " execute ShrubberyForm" << std::endl;
+			std::string tmp = this->_target + "_Shrubbery";
+			char const* ca = tmp.c_str();
 			std::ofstream file;
-			file.open(this->_target, std::ios::out | std::ios::app);	
+			file.open(ca, std::ofstream::out | std::ofstream::trunc);	
 			if (!file.is_open())
 			{
 				std::cout << "Opening file failed !" << std::endl;

@@ -22,8 +22,8 @@ private:
 	
 	std::string const	_name;
 	bool				_sign;
-	int 				_w_grade;
-	int					_x_grade;
+	int 		const	_w_grade;
+	int			const	_x_grade;
 
 public:
 	

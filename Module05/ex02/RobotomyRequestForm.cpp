@@ -13,6 +13,7 @@
 #include "RobotomyRequestForm.hpp"
 #include <iomanip>
 #include <fstream>
+#include <cstdlib>
 #include <time.h>
 
 RobotomyRequestForm::RobotomyRequestForm(void) :  AForm("Default", 72, 45)

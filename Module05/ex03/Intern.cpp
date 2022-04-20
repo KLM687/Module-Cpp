@@ -11,20 +11,24 @@
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-static AForm *robotomy(std::string target)
+AForm *Intern::robotomy(std::string target)
 {
 	AForm *robo = new RobotomyRequestForm(target);
 	return (robo);
 }
 
-static AForm *Presidential(std::string target)
+AForm *Intern::Presidential(std::string target)
 {
 	AForm *presi = new PresidentialPardonForm(target);
 	return (presi);
 }
 
-static AForm *Shrubbery(std::string target)
+AForm *Intern::Shrubbery(std::string target)
 {
 	AForm *bery = new ShrubberyCreationForm(target);
 	return (bery);
@@ -32,6 +36,9 @@ static AForm *Shrubbery(std::string target)
 
 Intern::Intern(void)
 {
+	array[0] = &Intern::robotomy;
+	array[1] = &Intern::Presidential;
+	array[2] = &Intern::Shrubbery;
 }
 
 Intern::Intern(Intern const & src)
@@ -43,18 +50,17 @@ Intern::~Intern(void)
 {
 }
 
-AForm *makeForm(std::string form, std::string target)
+AForm *Intern::makeForm(std::string form, std::string target)
 {
 	AForm	*form_ret = NULL;
-	AForm	*(*ptr[3])(std::string target) = { robotomy, Presidential, Shrubbery};
 	std::string	request[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 	for (int i = 0; i < 3; i++)
 	{
 		if (form == request[i])
-			form_ret = ptr[i](target);
+			form_ret = (*this.*array[i])(target);	
 	}
 	if (form_ret)
-		std::cout << "Intern creates " << *form_ret << std::endl;
+		std::cout << "Intern creates " << *form_ret;
 	else
 		std::cout << "Please enter a correct request" << std::endl;
 	return (form_ret);

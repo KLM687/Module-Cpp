@@ -24,7 +24,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src)
 {
-	this->_name = src.getName();
 	this->_grade = src.getGrade();
 	testGrade();
 }
@@ -47,9 +46,9 @@ void		Bureaucrat::testGrade(void) const
 {
 	try
 	{
-		if (this->_grade < 140 || this->_grade < 1)
+		if (this->_grade < 1)
 			throw GradeTooHighException;
-		else if (this->_grade > 145)
+		else if (this->_grade > 150)
 			throw GradeTooLowException;
 	}
 	catch (std::exception& e)
@@ -62,26 +61,21 @@ void		Bureaucrat::testGrade(void) const
 void		Bureaucrat::upGrade(int rank)
 {
 	this->_grade -= rank;
-	if (this->_grade <= 0)
-		this->_grade = 1;
-	std::cout << getName() << " Bureaucrat grade " << getGrade() << std::endl;
 	testGrade();
+	std::cout << getName() << " Bureaucrat grade " << getGrade() << std::endl;
 }
 
 void 		Bureaucrat::downGrade(int rank)
 {
 	this->_grade += rank;
-	if (this->_grade > 150)
-		this->_grade = 150;
-	std::cout << getName() << " Bureaucrat grade " << getGrade() << std::endl;
 	testGrade();
+	std::cout << getName() << " Bureaucrat grade " << getGrade() << std::endl;
 }
 
 Bureaucrat Bureaucrat::operator=(Bureaucrat const & rhs)
 {
 	if (this != &rhs)
 	{
-		this->_name = rhs.getName();
 		this->_grade = rhs.getGrade();
 	}
 	return (*this);

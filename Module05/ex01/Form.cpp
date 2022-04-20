@@ -22,11 +22,9 @@ Form::Form(std::string name, int Wgrade, int Xgrade) : _name(name), _sign(false)
 	testGrade();
 }
 
-Form::Form(Form const & src) :_name(src.getName())
+Form::Form(Form const & src) : _name(src.getName()), _w_grade(src.getWgrade()), _x_grade(src.getXgrade())
 {
 	this->_sign = src.getSign();
-	this->_w_grade = getWgrade();
-	this->_x_grade = getXgrade();
 	testGrade();
 }
 
@@ -104,8 +102,6 @@ Form Form::operator=(Form const & rhs)
 	if (this != &rhs)
 	{
 		this->_sign = rhs.getSign();
-		this->_w_grade = rhs.getWgrade();
-		this->_x_grade = rhs.getXgrade();
 	}
 	return (*this);
 }

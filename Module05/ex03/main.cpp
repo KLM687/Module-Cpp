@@ -19,13 +19,12 @@
 
 int main(void) 
 {
-	std::cout << "----- Exception High : grade > 140 ---- Exception Low : grade < 145 -----" << std::endl;
 
 	Bureaucrat a("A", 1);
 	Bureaucrat b("B", 150);
 	Bureaucrat c("C", 143);
 
-	ShrubberyCreationForm tata("tata");
+	ShrubberyCreationForm tata("garden");
 	tata.beSigned(a);
 	tata.execute(c);
 	tata.execute(a);
@@ -45,5 +44,14 @@ int main(void)
     AForm*   rrf;
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	rrf->getName();
+	rrf->beSigned(c);
+	rrf->execute(c);
+	rrf->beSigned(a);
+	rrf->execute(a);
+	
+	Intern  someRandomIntern2;
+    AForm*   rff;
+    rff = someRandomIntern2.makeForm("SLEEEEEEEP", "test");
+	delete rrf;
 
 }
