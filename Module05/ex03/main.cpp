@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void) 
 {
@@ -39,5 +40,10 @@ int main(void)
 	titi.beSigned(a);
 	titi.execute(c);
 	titi.execute(a);
+
+	Intern  someRandomIntern;
+    AForm*   rrf;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf->getName();
 
 }
