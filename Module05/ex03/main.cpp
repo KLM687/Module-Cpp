@@ -45,7 +45,7 @@ int main(void)
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	rrf->getName();
 	rrf->beSigned(c);
-	rrf->execute(c);
+	rrf->execute(b);
 	rrf->beSigned(a);
 	rrf->execute(a);
 	

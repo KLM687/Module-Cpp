@@ -19,7 +19,7 @@ int main(void)
 	Bureaucrat a("A", 1);
 	Bureaucrat b("B", 150);
 	Bureaucrat c("C", 143);
-	
+
 	Form F("F.A", 100, 50);
 	Form G("F.G", 0 , 550);
 	Form H("F.H", 1, 1);

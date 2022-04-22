@@ -15,11 +15,21 @@
 int main(void) 
 {
 
-	Bureaucrat a("A", 1);
-	Bureaucrat b("B", 150);
-	Bureaucrat c("C", 143);
-
-	std::cout << "----------- OVERLOAD << ---------------------" << std::endl;
+	try
+	{
+		Bureaucrat a("A", 1);
+		//Bureaucrat b("B", 150);
+		//Bureaucrat c("C", 143);
+		//Bureaucrat d("D", 1000);
+		//Bureaucrat e("E", -1000);
+		//Bureaucrat f("F", 0);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
+	/*std::cout << "----------- OVERLOAD << ---------------------" << std::endl;
 	
 	std::cout << a;
 	std::cout << b;
@@ -29,5 +39,5 @@ int main(void)
 	
 	a.downGrade(150);
 	b.upGrade(10);
-	c.upGrade(1000);
+	c.upGrade(1000);*/
 }

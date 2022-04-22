@@ -44,18 +44,17 @@ int 		Bureaucrat::getGrade(void) const
 
 void		Bureaucrat::testGrade(void) const
 {
-	try
-	{
+	//try
+	//{
 		if (this->_grade < 1)
 			throw GradeTooHighException;
 		else if (this->_grade > 150)
 			throw GradeTooLowException;
-	}
-	catch (std::exception& e)
+	//}
+	/*catch (std::exception& e)
 	{
 		std::cout << this->getName() << " " << e.what() << std::endl;
-	}
-
+	}*/
 }
 
 void		Bureaucrat::upGrade(int rank)
