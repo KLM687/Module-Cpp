@@ -23,31 +23,7 @@ int main (int argc, char **argv)
 		return 1;
 	}
 	str = argv[1];
-	int i;
-	bool point;
-
-	point = false;
-	i = 0;
-	if (str[str.size() - 1] != 'f' || str[i] == '.')
-		return 1;
-	if (str[0] == '-' || str[0] == '+')
-		i++;
-	while (i < (int)str.size() - 1)
-	{
-		if (!isdigit(str[i]) )
-		{
-			if (point)
-				return 2;
-			else if (str[i] == '.')
-				point = true;
-			else	
-				return 3;
-		}
-		i++;
-	}
-	std::cout << "ok" << std::endl;
-	return 1;
-	//ScalarConvert convert(str);
+	ScalarConvert convert(str);
 	//convert.print();
 	return (0);
 }

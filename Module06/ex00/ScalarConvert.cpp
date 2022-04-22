@@ -11,25 +11,32 @@
 /* ************************************************************************** */
 
 #include "ScalarConvert.hpp"
+#include <limits.h>
 
-bool	ScalarConvert::IsInt(std::string str) const
+bool	ScalarConvert::isInt(std::string str) const
 {
 	int i;
 
 	i = 1;
-	if (str[0] != '-' || str[0] != '+' || !isdigit(str[0]))
+	if (str[0] != '-' && str[0] != '+' && !isdigit(str[0]))
 		return (0);
-	
 	while (str[i])
 	{
 		if (!isdigit(str[i]))
 			return 0;
 		i++;
 	}
+	char const *a = str.c_str();
+	double b = atol(a);
+	if (b > INT_MAX)
+	{
+		std::cout << "INT OVERFLOW" << std::endl;
+		return 0;
+	}
 	return 1;
 }
 
-bool	ScalarConvert::IsFloat(std::string str) const
+bool	ScalarConvert::isFloat(std::string str) const
 {
 	int i;
 	bool point;
@@ -63,7 +70,7 @@ bool	ScalarConvert::isDouble(std::string str) const
 	
 	i = 1;
 	point = false;
-	if (str[0] != '-' || str[0] != '+' || str[0] == '.' || !isdigit(str[0]))
+	if (str[0] != '-' && str[0] != '+' && str[0] == '.' && !isdigit(str[0]))
 		return (0);
 	while (str[i])
 	{
@@ -81,21 +88,27 @@ bool	ScalarConvert::isDouble(std::string str) const
 	return 1;
 }
 
-bool	ScalarConvert::IsChar(std::string str)
+bool	ScalarConvert::isChar(std::string str) const
 {
-
+	if (str.size() == 1)
+	{
+		if (isascii(str[0]))
+			return 1;
+	}
+	return (0);
 }
 
 std::string	ScalarConvert::findType(std::string str) const
 {
-	if (IsInt(str))
+	if (isInt(str))
 		return ("Int");
-	else if (IsFloat(str))
+	else if (isFloat(str))
 		return("Float");
-	else if (IsDouble(str))
+	else if (isDouble(str))
 		return ("Double");
-	else if (IsChar(str))
+	else if (isChar(str))
 		return ("Char");
+	return ("Enter a valid type");
 }
 
 void	ScalarConvert::print(void) const
@@ -111,6 +124,7 @@ ScalarConvert::ScalarConvert(void)
 ScalarConvert::ScalarConvert(std::string str) 
 {
 	std::string type = findType(str);
+	std::cout << "type is " << type << std::endl;
 }
 
 ScalarConvert::ScalarConvert(ScalarConvert const & src)

@@ -15,6 +15,7 @@
 #include <iostream>
 #include <cstring>
 #include <string>
+#include <cstdlib>
 
 class ScalarConvert
 {
@@ -23,7 +24,7 @@ private:
 	char 	_c;
 	int  	_i;
 	float	_f;
-	double 	_b; 
+	double 	_d; 
 
 public:
 
