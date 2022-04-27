@@ -12,18 +12,18 @@
 
 #include "ScalarConvert.hpp"
 #include <stdlib.h>
+#include <iomanip>
+
 
 int main (int argc, char **argv)
 {
-	std::string str;
 
 	if (argc != 2)
 	{
 		std::cout << "Wrong number of argument" << std::endl;
 		return 1;
 	}
-	str = argv[1];
-	ScalarConvert convert(str);
-	//convert.print();
+	std::string str = argv[1];
+	ScalarConvert convert(argv[1]);
 	return (0);
 }
