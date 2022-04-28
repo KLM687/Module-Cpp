@@ -13,7 +13,8 @@
 #include "ScalarConvert.hpp"
 #include <limits>
 #include <float.h>
-#include <math.h> 
+#include <math.h>
+#include <cmath> 
 #include <stdlib.h> 
 
 
