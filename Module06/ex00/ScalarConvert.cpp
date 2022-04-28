@@ -40,7 +40,7 @@ bool	ScalarConvert::isFloat(std::string str)
 
 	point = false;
 	i = 0;
-	if (str[str.size() - 1] != 'f' || str[0] == '.')
+	if (str[str.size() - 1] != 'f' || str[0] == '.' || str[0] == 'f')
 		return 0;
 	if (str[0] == '-' || str[0] == '+')
 		i++;
@@ -196,7 +196,7 @@ ScalarConvert::ScalarConvert(std::string str) : _iOverflow(false), _fOverflow(fa
 		{
 			b = atof(c);
 			this->_f = static_cast<float>(b);
-			std::cout << "Float : " << std::setprecision(10) <<this->_f << "f" << std::endl;
+			std::cout << "Float : " << std::setprecision(5) <<this->_f << "f" << std::endl;
 		}
 		else
 			std::cout << "Float : Impossible" << std::endl;
