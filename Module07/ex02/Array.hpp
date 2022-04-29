@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 11:16:57 by flee              #+#    #+#             */
-/*   Updated: 2022/04/29 11:16:58 by flee             ###   ########.fr       */
+/*   Created: 2022/04/29 12:13:49 by flee              #+#    #+#             */
+/*   Updated: 2022/04/29 12:13:50 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Array.hpp"
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
-int main(int, char**)
+template<typename T>
+class Array
 {
-	int * a = new int();
-	std::cout << a << std::endl;
-}
+private:
+		T *_array;
+public:
+	Array(void)
+	{
+		this->_array = new T[1];
+		_array[0] = 0;
+	}
+	Array(unsigned int n) : _array(new T[n]){}; 
+	~Array(void)
+	{
+		delete [] _array;
+	}
+};
 
+#endif

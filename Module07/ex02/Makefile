@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 
-NAME= Iiiiiiiter
+NAME= AAAAARRRRRRAAAAAAAY
 
-SRCS=  main.cpp
+SRCS=  main.cpp 
 
 OBJS= $(SRCS:.cpp=.o)
 
