@@ -12,6 +12,9 @@
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
+# include <cstdlib>
+# include <ctime>
+
 
 template<typename T>
 class Array
@@ -20,7 +23,12 @@ private:
 		T				*_array;
 		unsigned int	_size; 
 public:
-	
+
+	void size(void) const
+	{
+		return (this->_size);
+	}
+
 	Array<T>(void)
 	{
 		this->_array = new T[1];
@@ -34,7 +42,7 @@ public:
 	{
 		this->_size = cpy._size;
 		_array = new T[_size];
-		for (int i = 0 ; i < _size ; i++)
+		for (unsigned int i = 0 ; i < _size ; i++)
 		{
 			_array[i] = cpy._array[i];
 		}
