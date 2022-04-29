@@ -15,7 +15,10 @@
 
 int main(int, char**)
 {
-	int * a = new int();
-	std::cout << a << std::endl;
+	int *a = new int();
+	std::cout << a[0] << std::endl;
+
+	Array<int> boum(10);
+	delete a;
 }
 

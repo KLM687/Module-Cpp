@@ -17,14 +17,28 @@ template<typename T>
 class Array
 {
 private:
-		T *_array;
+		T				*_array;
+		unsigned int	_size; 
 public:
-	Array(void)
+	
+	Array<T>(void)
 	{
 		this->_array = new T[1];
-		_array[0] = 0;
+		this->_array[0] = 0;
+		this->_size = 1;
 	}
-	Array(unsigned int n) : _array(new T[n]){}; 
+	
+	Array<T>(unsigned int n) : _array(new T[n]), _size(n){};
+	
+	Array(Array<T> const & cpy)
+	{
+		this->_size = cpy._size;
+		_array = new T[_size];
+		for (int i = 0 ; i < _size ; i++)
+		{
+			_array[i] = cpy._array[i];
+		}
+	}
 	~Array(void)
 	{
 		delete [] _array;
