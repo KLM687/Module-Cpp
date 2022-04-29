@@ -24,7 +24,7 @@ private:
 		unsigned int	_size; 
 public:
 
-	void size(void) const
+	unsigned int size(void) const
 	{
 		return (this->_size);
 	}
@@ -51,6 +51,29 @@ public:
 	{
 		delete [] _array;
 	}
+
+	Array<T> & operator=(Array<T> const & rhs)
+	{
+		_size = rhs.size();
+		_array = new T [_size];
+		for (size_t i = 0; i < _size; i++)
+			_array[i] = rhs._array[i];
+		return (*this);
+	}
+
+	T & operator [] (size_t pos) const
+		{
+			try
+			{
+				if (pos > this->size() - 1)
+					throw std::out_of_range ("Exception: Invalid index");
+			}
+			catch (std::out_of_range & oor)
+			{
+				std::cout << oor.what() << std::endl;
+			}
+			return (this->_array[pos]);
+		};
 };
 
 #endif
