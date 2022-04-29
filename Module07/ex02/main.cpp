@@ -21,10 +21,12 @@ int main(int, char**)
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = rand();
+        const int value = rand() % 5;
         numbers[i] = value;
-        mirror[i] = value;
+       	mirror[i] = value;
     }
+	//std::cout << numbers;
+	//std::cout << mirror;
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -60,6 +62,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

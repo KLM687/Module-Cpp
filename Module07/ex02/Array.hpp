@@ -29,6 +29,11 @@ public:
 		return (this->_size);
 	}
 
+	T *getArray(void) const
+	{
+		return(_array);
+	}
+
 	Array<T>(void)
 	{
 		this->_array = new T[1];
@@ -47,6 +52,7 @@ public:
 			_array[i] = cpy._array[i];
 		}
 	}
+
 	~Array(void)
 	{
 		delete [] _array;
@@ -56,24 +62,26 @@ public:
 	{
 		_size = rhs.size();
 		_array = new T [_size];
-		for (size_t i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = rhs._array[i];
 		return (*this);
 	}
 
-	T & operator [] (size_t pos) const
-		{
-			try
-			{
-				if (pos > this->size() - 1)
-					throw std::out_of_range ("Exception: Invalid index");
-			}
-			catch (std::out_of_range & oor)
-			{
-				std::cout << oor.what() << std::endl;
-			}
-			return (this->_array[pos]);
-		};
+	T & operator[](unsigned int pos) const
+	{
+		if (pos > this->size() - 1 || pos < 0)
+			throw std::out_of_range ("Exception: Invalid index");
+		return (this->_array[pos]);
+	};
 };
+
+template<typename T>
+std::ostream &	operator<<(std::ostream & o, Array<T> const & rhs)
+{
+	for(unsigned int i = 0 ; i < rhs.size() ; i++)
+		o << (rhs.getArray())[i] << " ";
+	o << std::endl;
+	return (o);
+}
 
 #endif
