@@ -95,7 +95,7 @@ void identify(Base &p)
 		std::cout << "It's A BAAAASE" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast &bc) 
+	catch (std::exception& e) 
 	{
 	}
 	try 
@@ -104,7 +104,7 @@ void identify(Base &p)
 		std::cout << "It's B BAAAASE" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast &bc) 
+	catch (std::exception& e) 
 	{
 	}
 	try {
@@ -112,7 +112,7 @@ void identify(Base &p)
 		std::cout << "It's C BAAAASE" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast &bc) 
+	catch (std::exception& e) 
 	{
 	}
 }

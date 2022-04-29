@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Data.hpp"
+#include <stdint.h>
 
 static uintptr_t serialize(Data* ptr)
 {

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 09:57:02 by flee              #+#    #+#             */
-/*   Updated: 2022/04/22 09:57:03 by flee             ###   ########.fr       */
+/*   Created: 2022/04/29 10:18:12 by flee              #+#    #+#             */
+/*   Updated: 2022/04/29 10:18:13 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvert.hpp"
-#include <stdlib.h>
-#include <iomanip>
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
 
-int main (int argc, char **argv)
+template<typename A, typename B, typename C>
+void Iter(A ptr, B size, C function)
 {
-
-	if (argc != 2)
+	for (int i = 0; i < size; i++)
 	{
-		std::cout << "Wrong number of argument" << std::endl;
-		return 1;
+		function((*ptr)[i]);
 	}
-	std::string str = argv[1];
-	ScalarConvert convert(argv[1]);
-	return (0);
 }
+
+template<typename T>
+void print(T print)
+{
+	std::cout << print << std::endl;
+}
+
+#endif

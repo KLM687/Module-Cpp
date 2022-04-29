@@ -5,24 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flee <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 09:57:02 by flee              #+#    #+#             */
-/*   Updated: 2022/04/22 09:57:03 by flee             ###   ########.fr       */
+/*   Created: 2022/04/29 10:16:20 by flee              #+#    #+#             */
+/*   Updated: 2022/04/29 10:16:21 by flee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvert.hpp"
-#include <stdlib.h>
-#include <iomanip>
+#include "iter.hpp"
 
-int main (int argc, char **argv)
+int main (void)
 {
-
-	if (argc != 2)
-	{
-		std::cout << "Wrong number of argument" << std::endl;
-		return 1;
-	}
-	std::string str = argv[1];
-	ScalarConvert convert(argv[1]);
-	return (0);
+	char ctab[] = "ABCDEFG";
+	int  itab[] = {0,1,2,3,4,5,6,7};
+	
+	Iter(&ctab, 8, print<char>);
+	Iter(&itab, 8, print<int>);
 }
