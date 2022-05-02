@@ -14,6 +14,13 @@
 
 int main (void)
 {
-	Span test(10);
-	test.addNumber(1);
+	try
+	{
+		Span test(10);
+		test.addNumber(1);
+	}
+	catch(const std::out_of_range& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }

@@ -44,17 +44,13 @@ void 	Span::printVec(void)
 
 void    Span::addNumber(int nb)
 {
-    _N--;
-    try
-    {
-        if (_N == 0)
-            throw std::out_of_range ("OVERFLOW");
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    _vec->push_back(nb);
+	std::cout << _N << std::endl;
+	this->_N = this->_N - 1;
+	std::cout << _N << std::endl;
+	if (this->_N == 9)
+		std::cout << "BLABLABLA" << std::endl;
+		//throw std::out_of_range ("OUT");
+	_vec->push_back(nb);
 }
 
 Span & Span::operator=(Span const & rhs)
