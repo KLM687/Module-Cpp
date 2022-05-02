@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include "awesome.hpp"
 
 template<typename T>
 T const & max (T const & x, T const & y)
@@ -33,7 +34,17 @@ void swap (T &x, T &y)
 	y = tmp;
 }
 
-int main (int argc, char **argv)
+int main(void)
+{
+	Awesome a(2), b(4);
+
+	swap(a, b);
+	std::cout << a << " " << b << std::endl;
+	std::cout << max(a, b) << std::endl;
+
+}
+
+/*int main (int argc, char **argv)
 {
 	int a = 2;
 	int b = 3;
@@ -67,5 +78,4 @@ int main (int argc, char **argv)
 	std::cout << "argv[1] = " << argv[1] << std::endl;
 	std::cout << "argv[2] = " << argv[2] << std::endl;
 	std::cout << std::endl;
-}
-
+}*/

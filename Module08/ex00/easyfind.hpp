@@ -17,7 +17,7 @@
 # include <algorithm>
 # include <list>
 # include <iterator>
-# include <array>
+# include <deque>
 
 template<typename T>
 bool	easyfind(T const & haystack, int needle)
