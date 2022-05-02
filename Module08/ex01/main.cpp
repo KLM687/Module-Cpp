@@ -15,5 +15,5 @@
 int main (void)
 {
 	Span test(10);
-	Span test1;
+	test.addNumber(1);
 }

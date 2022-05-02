@@ -19,56 +19,20 @@
 class Span
 {
 private:
-	std::vector<int> *_vec;
+	std::vector<int> 	*_vec;
+	unsigned int 		_N; 
 
 public:
 	Span(void);
 	Span(unsigned int N);
 	Span(Span const & cpy);
-	printVec(void);
+	~Span(void);
+
+	std::vector<int>	*getVec(void);	
+	void				printVec(void);
+	void 				addNumber(int nb);	
+	
 	Span & operator=(Span const & rhs);
-	~Span();
 };
-
-std::ostream &	operator<<(std::ostream & o, Span const & rhs)
-{
-	rhs.printVec();
-	o << std::endl;
-	return (o);
-}
-
-Span::Span(void)
-{
-}
-
-Span::Span(unsigned int N)
-{
-	std::vector<int> vec(N, 0);
-	_vec = &vec;
-}
-
-Span::Span(Span const & cpy)
-{
-	_vec = cpy._vec;
-}
-
-Span::printVec(void)
-{
-	std::for_each(_vec->begin(), _vec->end(), [](const auto &e)
-	{
-		std::cout << e << " ";
-    });
-	std::cout << std::endl;
-}
-
-Span::operator=(Span const & rhs)
-{
-	_vec = rhs._vec;
-}
-
-Span::~Span(void)
-{
-}
-
 
 #endif
