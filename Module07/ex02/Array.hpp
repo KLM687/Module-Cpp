@@ -70,7 +70,7 @@ public:
 	T & operator[](unsigned int pos) const
 	{
 		if (pos > this->size() - 1 || pos < 0)
-			throw std::out_of_range ("Exception: Invalid index");
+			throw (std::out_of_range ("Exception: Invalid index"));
 		return (this->_array[pos]);
 	};
 };

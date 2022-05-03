@@ -15,12 +15,14 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
+# include <numeric>
 
 class Span
 {
 private:
-	std::vector<int> 	*_vec;
-	unsigned int 		_N; 
+	std::vector<int> 	_vec;
+	unsigned int  		_N; 
+	unsigned int 		_i;
 
 public:
 	Span(void);
@@ -28,9 +30,11 @@ public:
 	Span(Span const & cpy);
 	~Span(void);
 
-	std::vector<int>	*getVec(void);	
+	std::vector<int>	getVec(void);	
 	void				printVec(void);
-	void 				addNumber(int nb);	
+	void 				addNumber(int nb);
+	int					shortestSpan(void);
+	int					longestSpan(void);	
 	
 	Span & operator=(Span const & rhs);
 };

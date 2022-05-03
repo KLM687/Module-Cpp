@@ -16,19 +16,20 @@ Span::Span(void)
 {
 }
 
-Span::Span(unsigned int N) : _N(N)
+Span::Span(unsigned int N) : _N(N), _i(0)
 {
-	std::vector<int> vec(N, 0);
-	_vec = &vec;
+	if (_N <= 1)
+		throw std::out_of_range ("Exception : Size problem");
 }
 
 Span::Span(Span const & cpy)
 {
 	_vec = cpy._vec;
+	_i = cpy._i;
 	_N = cpy._N;
 }
 
-std::vector<int>  *Span::getVec(void)
+std::vector<int>  Span::getVec(void)
 {
 	return (_vec);
 } 
@@ -37,20 +38,55 @@ void 	Span::printVec(void)
 {
 	std::cout << "The vector elements are : ";
 
-	for(unsigned int i = 0; i < _vec->size(); i++)
-   		std::cout << _vec->at(i) << ' ';
+	for(unsigned int i = 0; i < _vec.size();  i++)
+   		std::cout << _vec.at(i) << ' ';
 	std::cout << std::endl;
 }
 
 void    Span::addNumber(int nb)
 {
-	std::cout << _N << std::endl;
-	this->_N = this->_N - 1;
-	std::cout << _N << std::endl;
-	if (this->_N == 9)
-		std::cout << "BLABLABLA" << std::endl;
-		//throw std::out_of_range ("OUT");
-	_vec->push_back(nb);
+	if (_i <= _N)
+		_i++;
+	if (_i > _N)
+	{
+		throw std::out_of_range ("Exception : Overflow");
+		return ;
+	}
+	else
+		_vec.push_back(nb);
+}
+
+int	Span::shortestSpan(void)
+{
+	int shortest;
+
+	std::vector<int> tmp(_vec);
+	std::sort(tmp.begin(), tmp.end());
+	
+	/*for(unsigned int i = 0; i < tmp.size();  i++)
+   		std::cout << tmp.at(i) << ' ';
+	std::cout << std::endl;*/
+	
+	std::adjacent_difference(tmp.begin(), tmp.end(), tmp.begin());
+	tmp.erase(tmp.begin());
+	shortest = *min_element(tmp.begin(), tmp.end());
+
+	/*for(unsigned int i = 0; i < tmp.size();  i++)
+   		std::cout << tmp.at(i) << ' ';
+	std::cout << std::endl;*/
+	
+	return (shortest);
+}
+
+int	Span::longestSpan(void)
+{
+	int longest;
+
+	std::vector<int> tmp(_vec);
+	std::sort(tmp.begin(), tmp.end());
+	longest = tmp[tmp.size() - 1] - tmp[0]; 
+	
+	return (longest);
 }
 
 Span & Span::operator=(Span const & rhs)
