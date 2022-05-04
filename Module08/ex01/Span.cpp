@@ -58,40 +58,54 @@ void    Span::addNumber(int nb)
 
 int	Span::shortestSpan(void)
 {
-	int shortest;
+	int shortest = 0;
 
-	std::vector<int> tmp(_vec);
-	std::sort(tmp.begin(), tmp.end());
-	
-	/*for(unsigned int i = 0; i < tmp.size();  i++)
-   		std::cout << tmp.at(i) << ' ';
-	std::cout << std::endl;*/
-	
-	std::adjacent_difference(tmp.begin(), tmp.end(), tmp.begin());
-	tmp.erase(tmp.begin());
-	shortest = *min_element(tmp.begin(), tmp.end());
+	if (_i >= 2)
+	{
+		std::vector<int> tmp(_vec);
+		std::sort(tmp.begin(), tmp.end());
 
-	/*for(unsigned int i = 0; i < tmp.size();  i++)
-   		std::cout << tmp.at(i) << ' ';
-	std::cout << std::endl;*/
-	
+		/*for(unsigned int i = 0; i < tmp.size();  i++)
+ 	  		std::cout << tmp.at(i) << ' ';
+		std::cout << std::endl;*/
+
+		std::adjacent_difference(tmp.begin(), tmp.end(), tmp.begin());
+		tmp.erase(tmp.begin());
+		shortest = *min_element(tmp.begin(), tmp.end());
+
+		/*for(unsigned int i = 0; i < tmp.size();  i++)
+	   		std::cout << tmp.at(i) << ' ';
+		std::cout << std::endl;*/
+	}
 	return (shortest);
 }
 
 int	Span::longestSpan(void)
 {
-	int longest;
-
-	std::vector<int> tmp(_vec);
-	std::sort(tmp.begin(), tmp.end());
-	longest = tmp[tmp.size() - 1] - tmp[0]; 
-	
+	int longest = 0;
+	if (_i >= 2)
+	{
+		std::vector<int> tmp(_vec);
+		std::sort(tmp.begin(), tmp.end());
+		longest = tmp[tmp.size() - 1] - tmp[0]; 
+	}
 	return (longest);
+}
+
+void 	Span::random(void)
+{
+	std::vector<int> tmp(_N);
+	std::srand(unsigned(time(NULL)));
+	std::generate(tmp.begin(), tmp.end(), std::rand);
+	_vec = tmp;
+	_i = _N + 1;	
 }
 
 Span & Span::operator=(Span const & rhs)
 {
 	_vec = rhs._vec;
+	_i = rhs._i;
+	_N = rhs._N;
 	return (*this);
 }
 

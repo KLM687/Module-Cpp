@@ -16,6 +16,8 @@
 # include <vector>
 # include <algorithm>
 # include <numeric>
+# include <time.h>
+# include <stdlib.h>
 
 class Span
 {
@@ -34,7 +36,8 @@ public:
 	void				printVec(void);
 	void 				addNumber(int nb);
 	int					shortestSpan(void);
-	int					longestSpan(void);	
+	int					longestSpan(void);
+	void				random(void);
 	
 	Span & operator=(Span const & rhs);
 };
